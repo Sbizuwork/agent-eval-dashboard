@@ -1,0 +1,257 @@
+[
+  {
+    "id": "case-01",
+    "ticket_text": "I was charged twice for order ORD-731204. Please reverse the duplicate charge. My account email is maya.chen@example.com.",
+    "expected_category": "billing",
+    "expected_priority": "high",
+    "expected_fields": {
+      "order_id": "ORD-731204",
+      "email": "maya.chen@example.com"
+    },
+    "expected_action": "refund_review",
+    "citation_required": true
+  },
+  {
+    "id": "case-02",
+    "ticket_text": "The mobile app closes every time I open the invoice screen on my Pixel 8. I use noah.rivera@example.com to sign in.",
+    "expected_category": "technical",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "device": "Pixel 8",
+      "email": "noah.rivera@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-03",
+    "ticket_text": "Tracking for package ORD-584291 has not moved for six days. It was supposed to arrive in Denver. Contact me at olivia.park@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "order_id": "ORD-584291",
+      "destination": "Denver",
+      "email": "olivia.park@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-04",
+    "ticket_text": "I am locked out after changing phones and cannot receive the sign-in code. The login email is ethan.brooks@example.com.",
+    "expected_category": "account",
+    "expected_priority": "high",
+    "expected_fields": {
+      "email": "ethan.brooks@example.com",
+      "issue": "cannot receive sign-in code"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-05",
+    "ticket_text": "I returned order ORD-190633 two weeks ago, but the $48.50 refund has not appeared. Please check with my bank; ava.morgan@example.com.",
+    "expected_category": "refund",
+    "expected_priority": "high",
+    "expected_fields": {
+      "order_id": "ORD-190633",
+      "amount": "$48.50",
+      "email": "ava.morgan@example.com"
+    },
+    "expected_action": "refund_review",
+    "citation_required": true
+  },
+  {
+    "id": "case-06",
+    "ticket_text": "Could you update the delivery instructions for order ORD-662018? Leave it with the front desk. Email: liam.foster@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "low",
+    "expected_fields": {
+      "order_id": "ORD-662018",
+      "delivery_instruction": "Leave it with the front desk",
+      "email": "liam.foster@example.com"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": true
+  },
+  {
+    "id": "case-07",
+    "ticket_text": "My subscription renewed for $12.99 even though I canceled last month. The invoice number is INV-884102 and my email is sophia.kim@example.com.",
+    "expected_category": "billing",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "invoice_id": "INV-884102",
+      "amount": "$12.99",
+      "email": "sophia.kim@example.com"
+    },
+    "expected_action": "refund_review",
+    "citation_required": false
+  },
+  {
+    "id": "case-08",
+    "ticket_text": "The password reset link says it expired immediately. I requested it for harper.jones@example.com about ten minutes ago.",
+    "expected_category": "account",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "email": "harper.jones@example.com",
+      "issue": "password reset link expired"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-09",
+    "ticket_text": "My parcel for order ORD-447520 was delivered to the wrong building at 18 Pine Street. Please help, Lucas Reed, lucas.reed@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "high",
+    "expected_fields": {
+      "order_id": "ORD-447520",
+      "address": "18 Pine Street",
+      "email": "lucas.reed@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-10",
+    "ticket_text": "The desktop app shows error code E-204 whenever I upload a PDF. I am on Windows 11; contact is zoe.bennett@example.com.",
+    "expected_category": "technical",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "error_code": "E-204",
+      "operating_system": "Windows 11",
+      "email": "zoe.bennett@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": false
+  },
+  {
+    "id": "case-11",
+    "ticket_text": "Please cancel the order I placed by mistake, ORD-305817. It has not shipped yet. Reach me at jack.turner@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "order_id": "ORD-305817",
+      "email": "jack.turner@example.com",
+      "issue": "cancel unshipped order"
+    },
+    "expected_action": "escalate",
+    "citation_required": false
+  },
+  {
+    "id": "case-12",
+    "ticket_text": "I don't recognize a $126.00 charge dated November 18 on my card. Account email is amira.hassan@example.com.",
+    "expected_category": "billing",
+    "expected_priority": "high",
+    "expected_fields": {
+      "amount": "$126.00",
+      "charge_date": "November 18",
+      "email": "amira.hassan@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-13",
+    "ticket_text": "A refund of $23.75 for order ORD-923641 was approved on Monday but is still pending. My address is ben.walsh@example.com.",
+    "expected_category": "refund",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "order_id": "ORD-923641",
+      "amount": "$23.75",
+      "email": "ben.walsh@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-14",
+    "ticket_text": "I need to change the email on my profile from mia.green@example.com to mia.g@example.net. I can still access both inboxes.",
+    "expected_category": "account",
+    "expected_priority": "low",
+    "expected_fields": {
+      "current_email": "mia.green@example.com",
+      "new_email": "mia.g@example.net"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-15",
+    "ticket_text": "Order ORD-518064 is missing one of the two items in the box. The missing product is the blue travel mug; email is theo.price@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "order_id": "ORD-518064",
+      "missing_item": "blue travel mug",
+      "email": "theo.price@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": false
+  },
+  {
+    "id": "case-16",
+    "ticket_text": "Your checkout page returned a blank screen twice on Safari 17 on my MacBook Air. I used nina.patel@example.com.",
+    "expected_category": "technical",
+    "expected_priority": "low",
+    "expected_fields": {
+      "browser": "Safari 17",
+      "device": "MacBook Air",
+      "email": "nina.patel@example.com"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-17",
+    "ticket_text": "My account was suspended, and I cannot access the dashboard before today's 3 PM deadline. Please call me back at 312-555-0146; email: caleb.ross@example.com.",
+    "expected_category": "account",
+    "expected_priority": "high",
+    "expected_fields": {
+      "deadline": "today's 3 PM",
+      "phone": "312-555-0146",
+      "email": "caleb.ross@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-18",
+    "ticket_text": "I was billed $7.00 for express shipping, but order ORD-771839 arrived by standard delivery. Can you review this? Email: emma.diaz@example.com.",
+    "expected_category": "billing",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "order_id": "ORD-771839",
+      "amount": "$7.00",
+      "email": "emma.diaz@example.com"
+    },
+    "expected_action": "refund_review",
+    "citation_required": true
+  },
+  {
+    "id": "case-19",
+    "ticket_text": "The tracking page for order ORD-230496 says label created, but the carrier hasn't received it after three days. I'm in Austin; priya.shah@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "low",
+    "expected_fields": {
+      "order_id": "ORD-230496",
+      "status": "label created",
+      "destination": "Austin",
+      "email": "priya.shah@example.com"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-20",
+    "ticket_text": "Someone changed my payout details without permission. I have lost access to my account and need it secured now. Email: dylan.cole@example.com.",
+    "expected_category": "account",
+    "expected_priority": "high",
+    "expected_fields": {
+      "email": "dylan.cole@example.com",
+      "issue": "unauthorized payout details change"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  }
+]

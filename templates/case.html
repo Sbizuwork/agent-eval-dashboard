@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ case.id }} · Support Ticket Evaluation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page-shell detail-shell">
+    <a class="back-link" href="{{ url_for('dashboard') }}">← Back to dashboard</a>
+    <header class="detail-header">
+      <div>
+        <p class="eyebrow">Case detail</p>
+        <h1>{{ case.id }}</h1>
+      </div>
+      <span class="status-chip {{ 'status-pass' if result.passed else 'status-fail' }}">
+        {{ 'PASS' if result.passed else 'FAIL' }}
+      </span>
+    </header>
+
+    <section class="detail-card">
+      <h2>Ticket text</h2>
+      <p class="ticket-text">{{ case.ticket_text }}</p>
+    </section>
+
+    <section class="detail-card">
+      <h2>Expected vs. predicted</h2>
+      <div class="comparison-grid">
+        <div class="comparison-column">
+          <h3>Expected</h3>
+          <dl>
+            <dt>Category</dt><dd>{{ case.expected_category }}</dd>
+            <dt>Priority</dt><dd>{{ case.expected_priority }}</dd>
+            <dt>Fields</dt><dd><code>{{ case.expected_fields|tojson }}</code></dd>
+            <dt>Action</dt><dd>{{ case.expected_action }}</dd>
+            <dt>Citation required</dt><dd>{{ 'Yes' if case.citation_required else 'No' }}</dd>
+          </dl>
+        </div>
+        <div class="comparison-column">
+          <h3>Predicted</h3>
+          <dl>
+            <dt>Category</dt><dd>{{ output.get('predicted_category', 'Missing') }}</dd>
+            <dt>Priority</dt><dd>{{ output.get('predicted_priority', 'Missing') }}</dd>
+            <dt>Fields</dt><dd><code>{{ output.get('extracted_fields', {})|tojson }}</code></dd>
+            <dt>Action</dt><dd>{{ output.get('action_taken', 'Missing') }}</dd>
+            <dt>Citation</dt><dd>{{ output.get('citation', 'Missing') or 'None provided' }}</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <h2>Failed checks</h2>
+      {% if result.reasons %}
+      <ul class="failure-list">
+        {% for reason in result.reasons %}
+        <li>{{ reason }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="success-message">All required checks passed.</p>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

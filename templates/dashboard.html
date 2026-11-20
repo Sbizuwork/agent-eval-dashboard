@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support Ticket Evaluation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Evaluation dashboard</p>
+        <h1>Support ticket agent</h1>
+        <p class="subtitle">Quality checks across {{ cases|length }} synthetic support cases.</p>
+      </div>
+      <div class="header-actions">
+        <span class="live-indicator"><span class="live-dot"></span>{{ live_mode }}</span>
+        <form action="{{ url_for('run_evaluation') }}" method="post">
+          <button class="button button-primary" type="submit">Run evaluation</button>
+        </form>
+      </div>
+    </header>
+
+    <section class="metrics-grid" aria-label="Evaluation metrics">
+      {% for metric in metrics %}
+      <article class="metric-card">
+        <div class="metric-card-top">
+          <h2>{{ metric.label }}</h2>
+          <span class="status-chip {{ 'status-pass' if metric.passed else 'status-fail' }}">
+            {{ 'PASS' if metric.passed else 'FAIL' }}
+          </span>
+        </div>
+        <p class="metric-value">{{ metric.percentage }}</p>
+        <p class="metric-threshold">Threshold: {{ metric.threshold_label }}</p>
+      </article>
+      {% endfor %}
+    </section>
+
+    <section class="results-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Case results</p>
+          <h2>Evaluation by ticket</h2>
+        </div>
+        <p class="section-note">{{ cases|selectattr('passed')|list|length }} of {{ cases|length }} passed</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Case</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Action</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for case in cases %}
+            <tr>
+              <td><a class="case-link" href="{{ url_for('case_detail', case_id=case.id) }}">{{ case.id }}</a></td>
+              <td>
+                <span class="{{ 'value-match' if case.predicted_category == case.expected_category else 'value-mismatch' }}">
+                  {{ case.predicted_category }}
+                </span>
+              </td>
+              <td>
+                <span class="{{ 'value-match' if case.predicted_priority == case.expected_priority else 'value-mismatch' }}">
+                  {{ case.predicted_priority }}
+                </span>
+              </td>
+              <td>
+                <span class="{{ 'value-match' if case.action_taken == case.expected_action else 'value-mismatch' }}">
+                  {{ case.action_taken }}
+                </span>
+              </td>
+              <td>
+                <span class="status-chip {{ 'status-pass' if case.passed else 'status-fail' }}">
+                  {{ 'PASS' if case.passed else 'FAIL' }}
+                </span>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
