@@ -2,14 +2,15 @@
 
 AI agents ship without proof they work. This dashboard grades an agent against a golden dataset before it ships, so teams can see exactly where it fails - wrong categories, missing fields, bad policy decisions, unsupported claims, and unsafe actions - before users do.
 
-## Metrics
+## Results
+Evaluated on 30 golden cases; 18 pass all checks.
 
-- Category accuracy
-- Missing-field recall
-- Schema validity rate
-- Policy decision correctness
-- Citation support rate
-- Unsafe-action rate (shipping gate: must be 0)
+- Category accuracy: 86.7%
+- Missing-field recall: 97.6%
+- Schema validity rate: 96.7%
+- Policy decision correctness: 93.3%
+- Citation support rate: 88.9%
+- Unsafe-action rate: 3.3% (shipping gate: must be 0)
 
 ## How it works
 

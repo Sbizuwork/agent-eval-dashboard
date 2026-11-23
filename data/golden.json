@@ -253,5 +253,134 @@
     },
     "expected_action": "escalate",
     "citation_required": true
+  },
+  {
+    "id": "case-21",
+    "ticket_text": "Order ORD-104857 was due yesterday, but tracking still shows it at the sorting facility in Chicago. I need it for a gift this weekend. My email is riley.hart@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "high",
+    "expected_fields": {
+      "order_id": "ORD-104857",
+      "destination": "Chicago",
+      "email": "riley.hart@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-22",
+    "ticket_text": "My subscription invoice INV-207415 shows a $19.99 charge for a plan I downgraded last week. Please review the charge. My email is jordan.lee@example.com.",
+    "expected_category": "billing",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "invoice_id": "INV-207415",
+      "amount": "$19.99",
+      "email": "jordan.lee@example.com"
+    },
+    "expected_action": "refund_review",
+    "citation_required": true
+  },
+  {
+    "id": "case-23",
+    "ticket_text": "I would like to change the display name on my profile to Sam Taylor. My account email is sam.taylor@example.com.",
+    "expected_category": "account",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "email": "sam.taylor@example.com",
+      "issue": "change display name"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-24",
+    "ticket_text": "The mobile app crashes with error code E-517 whenever I try to open a saved draft on my iPhone 15. My email is casey.nguyen@example.com.",
+    "expected_category": "technical",
+    "expected_priority": "high",
+    "expected_fields": {
+      "error_code": "E-517",
+      "device": "iPhone 15",
+      "email": "casey.nguyen@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-25",
+    "ticket_text": "I returned a damaged mug from order ORD-629310. The $14.25 refund has not appeared yet. Please check the status. My email is alex.bailey@example.com.",
+    "expected_category": "refund",
+    "expected_priority": "low",
+    "expected_fields": {
+      "order_id": "ORD-629310",
+      "amount": "$14.25",
+      "email": "alex.bailey@example.com"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-26",
+    "ticket_text": "Could you confirm whether order ORD-845172 has shipped yet? The tracking page still says it is preparing for shipment. My email is jamie.carter@example.com.",
+    "expected_category": "shipping",
+    "expected_priority": "low",
+    "expected_fields": {
+      "order_id": "ORD-845172",
+      "status": "preparing for shipment",
+      "email": "jamie.carter@example.com"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-27",
+    "ticket_text": "I cannot sign in because my two-factor codes are going to an old phone number. Please call me at 312-555-0187. My email is robin.ford@example.com.",
+    "expected_category": "account",
+    "expected_priority": "high",
+    "expected_fields": {
+      "email": "robin.ford@example.com",
+      "issue": "two-factor codes sent to old phone",
+      "phone": "312-555-0187"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-28",
+    "ticket_text": "The website will not load in Firefox 121 on my Windows laptop. I cleared the cache, but the page still shows a blank screen. My email is drew.martin@example.com.",
+    "expected_category": "technical",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "browser": "Firefox",
+      "device": "Windows laptop",
+      "email": "drew.martin@example.com"
+    },
+    "expected_action": "auto_reply",
+    "citation_required": false
+  },
+  {
+    "id": "case-29",
+    "ticket_text": "My card was charged $89.00 for an annual plan on November 20, but my account still shows as unpaid and I cannot use the service. Please escalate this. My email is morgan.reyes@example.com.",
+    "expected_category": "billing",
+    "expected_priority": "high",
+    "expected_fields": {
+      "amount": "$89.00",
+      "charge_date": "November 20",
+      "email": "morgan.reyes@example.com"
+    },
+    "expected_action": "escalate",
+    "citation_required": true
+  },
+  {
+    "id": "case-30",
+    "ticket_text": "I canceled order ORD-918204 before it shipped, but the $62.40 refund has not appeared after five days. Please review it. My email is jesse.ward@example.com.",
+    "expected_category": "refund",
+    "expected_priority": "medium",
+    "expected_fields": {
+      "order_id": "ORD-918204",
+      "amount": "$62.40",
+      "email": "jesse.ward@example.com"
+    },
+    "expected_action": "refund_review",
+    "citation_required": true
   }
 ]

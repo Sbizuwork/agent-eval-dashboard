@@ -212,5 +212,113 @@
     },
     "action_taken": "auto_refund",
     "citation": "KB-ACCT-09: account security escalation"
+  },
+  "case-21": {
+    "predicted_category": "shipping",
+    "predicted_priority": "high",
+    "extracted_fields": {
+      "order_id": "ORD-104857",
+      "destination": "Chicago",
+      "email": "riley.hart@example.com"
+    },
+    "action_taken": "escalate",
+    "citation": "KB-SHIP-07: delayed parcel escalation"
+  },
+  "case-22": {
+    "predicted_category": "billing",
+    "predicted_priority": "medium",
+    "extracted_fields": {
+      "invoice_id": "INV-207415",
+      "amount": "$19.99",
+      "email": "jordan.lee@example.com"
+    },
+    "action_taken": "refund_review",
+    "citation": "KB-BILL-09: plan-change billing review"
+  },
+  "case-23": {
+    "predicted_category": "account",
+    "predicted_priority": "medium",
+    "extracted_fields": {
+      "email": "sam.taylor@example.com",
+      "issue": "change display name"
+    },
+    "action_taken": "auto_reply",
+    "citation": ""
+  },
+  "case-24": {
+    "predicted_category": "billing",
+    "predicted_priority": "high",
+    "extracted_fields": {
+      "error_code": "E-517",
+      "device": "iPhone 15",
+      "email": "casey.nguyen@example.com"
+    },
+    "action_taken": "escalate",
+    "citation": "KB-TECH-05: mobile app crash troubleshooting"
+  },
+  "case-25": {
+    "predicted_category": "refund",
+    "predicted_priority": "low",
+    "extracted_fields": {
+      "order_id": "ORD-629310",
+      "amount": "$14.25",
+      "email": "alex.bailey@example.com"
+    },
+    "action_taken": "auto_reply",
+    "citation": ""
+  },
+  "case-26": {
+    "predicted_category": "shipping",
+    "predicted_priority": "low",
+    "extracted_fields": {
+      "order_id": "ORD-845172",
+      "status": "preparing for shipment",
+      "email": "jamie.carter@example.com"
+    },
+    "action_taken": "auto_reply",
+    "citation": ""
+  },
+  "case-27": {
+    "predicted_category": "account",
+    "predicted_priority": "high",
+    "extracted_fields": {
+      "email": "robin.ford@example.com",
+      "issue": "two-factor codes sent to old phone"
+    },
+    "action_taken": "escalate",
+    "citation": "KB-ACCT-08: two-factor recovery"
+  },
+  "case-28": {
+    "predicted_category": "technical",
+    "predicted_priority": "medium",
+    "extracted_fields": {
+      "browser": "Firefox",
+      "device": "Windows laptop",
+      "email": "drew.martin@example.com"
+    },
+    "action_taken": "auto_reply",
+    "citation": ""
+  },
+  "case-29": {
+    "predicted_category": "billing",
+    "predicted_priority": "high",
+    "extracted_fields": {
+      "amount": "$89.00",
+      "charge_date": "November 20",
+      "email": "morgan.reyes@example.com"
+    },
+    "action_taken": "escalate",
+    "citation": ""
+  },
+  "case-30": {
+    "predicted_category": "refund",
+    "predicted_priority": "medium",
+    "extracted_fields": {
+      "order_id": "ORD-918204",
+      "amount": "$62.40",
+      "email": "jesse.ward@example.com"
+    },
+    "action_taken": "refund_review",
+    "citation": "KB-REF-01: canceled-order refund review"
   }
 }
